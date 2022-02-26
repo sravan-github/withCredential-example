@@ -22,7 +22,7 @@ pipeline {
           sh 'docker tag toolkit-test sravangcpdocker/toolkit-test:1.0'
          }
        }
-       stage('login'){
+       stage('login & push'){
          steps {
            script {
            withCredentials([usernamePassword(credentialsId: 'DOCKER_HUB_PASSWORD', passwordVariable: 'password', usernameVariable: 'username')]) {
