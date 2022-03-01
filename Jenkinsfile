@@ -6,8 +6,8 @@ pipeline {
             steps {
                 sh '''
                    #!/bin/bash  
-                  https://github.com/sravan-github/withCredential-example.git
-                   cd toolkit
+                   git clone https://github.com/sravan-github/withCredential-example.git
+                   cd withCredential-example
                    ls -l
                    cp /var/lib/jenkins/workspace/test-pipeline/withCredential-example/Dockerfile /var/lib/jenkins/workspace/test-pipeline/Dockerfile
                    '''
