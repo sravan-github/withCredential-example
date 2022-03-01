@@ -19,7 +19,7 @@ pipeline {
           sh 'docker version'
           sh 'docker build -t toolkit-test .'
           sh 'docker image list'
-          sh 'docker tag toolkit-test sravangcpdocker/toolkit-test:1.0'
+          sh 'docker tag toolkit-test sravangcpdocker/toolkit-test:2.0'
          }
        }
        stage('login & push'){
@@ -27,7 +27,7 @@ pipeline {
            script {
            withCredentials([usernamePassword(credentialsId: 'DOCKER_HUB_PASSWORD', passwordVariable: 'password', usernameVariable: 'username')]) {
            sh 'docker login -u $username -p $password'
-           sh 'docker push  sravangcpdocker/toolkit-test:1.0'
+           sh 'docker push  sravangcpdocker/toolkit-test:2.0'
            }         
         }
       }
