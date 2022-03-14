@@ -16,6 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: |
-         docker tag toolkit-test sravangcpdocker/toolkit-test:1.0
+         docker build -t toolkit-test .
+         docker tag toolkit-test sravangcpdocker/toolkit-new:1.0
          docker login -u $username -p $password'
-         docker push  sravangcpdocker/toolkit-test:1.0
+         docker push  sravangcpdocker/toolkit-new:1.0
