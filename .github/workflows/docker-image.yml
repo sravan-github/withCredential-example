@@ -17,6 +17,6 @@ jobs:
     - name: Build the Docker image
       run: |
          docker build -t toolkit-test .
-         docker tag toolkit-test sravangcpdocker/toolkit-new:1.0
+         docker tag toolkit-test sravangcpdocker/toolkit-test:1.1
          docker login -u $username -p $password'
-         docker push  sravangcpdocker/toolkit-new:1.0
+         docker push  sravangcpdocker/toolkit-test:1.1
